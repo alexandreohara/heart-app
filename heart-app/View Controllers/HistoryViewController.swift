@@ -25,8 +25,8 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         cardView.titleLabel.text = "Histórico"
         cardView.subtitleLabel.text = "Veja seus últimos registros"
-        cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: 32)
-        cardView.subtitleLabel.font = UIFont.systemFont(ofSize: 16)
+        cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_BIG)
+        cardView.subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_BIG)
         cardView.backgroundColor = UIColor.white
         
         contentCard.backgroundColor = .white
@@ -129,7 +129,7 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         chartView.rightAxis.enabled = false
         
         let marker = BalloonMarker(color: UIColor(red:0.58, green:0.02, blue:0.02, alpha:1.0),
-                                   font: .systemFont(ofSize: 12),
+                                   font: .systemFont(ofSize: FontSize.SUBTITLE_LABEL_DEFAULT),
                                    textColor: .white,
                                    insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.chartView = chartView
