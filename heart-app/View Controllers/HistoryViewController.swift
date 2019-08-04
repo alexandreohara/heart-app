@@ -14,7 +14,6 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     let contentCard = UIView()
     let cardView = CardView()
-    let contentView = UILabel()
     let chartView = LineChartView()
     var shouldHideData: Bool = false
     
@@ -31,8 +30,7 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         contentCard.backgroundColor = .white
         contentCard.clipsToBounds = true
-        
-        //contentCard.addSubview(contentView)
+        contentView.backgroundColor = .blue
         contentCard.addSubview(chartView)
         contentCard.addSubview(cardView)
         view.addSubview(contentCard)
@@ -91,7 +89,6 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         visualEffectView.frame  = bounds
         contentCard.frame  = bounds
         cardView.frame = CGRect(x: 0, y: 40, width: bounds.width, height: 80)
-        contentView.frame = CGRect(x: 20, y: bounds.width + 20, width: bounds.width - 40, height: bounds.height - bounds.width - 20)
         chartView.frame = CGRect(x: 0, y: 80, width: bounds.width - 40, height: 2*bounds.height/3)
     }
     

@@ -79,7 +79,7 @@ extension CardViewController: RoundedCardWrapperDelegate {
             
             vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
             
-            vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 0, damping: 25)]
+            //vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 0, damping: 25)]
             
             vc.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
             
