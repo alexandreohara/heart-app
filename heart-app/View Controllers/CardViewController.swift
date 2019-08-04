@@ -21,7 +21,7 @@ class CardViewController: UIViewController {
         loadCards()
         icon.image = UIImage(named: "heart")
         mainTitle.text = "Heart Monitor"
-        mainTitle.font = UIFont.boldSystemFont(ofSize: 40)
+        mainTitle.font = UIFont.boldSystemFont(ofSize: FontSize.MAIN_TITLE)
         historyView.delegate = self
         profileView.delegate = self
         medicineView.delegate = self

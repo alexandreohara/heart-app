@@ -23,8 +23,8 @@ class CardView: UIView {
         super.init(frame: frame)
         clipsToBounds = true
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_DEFAULT)
+        subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_DEFAULT)
         //imageView.contentMode = .scaleAspectFill
         
         //addSubview(imageView)

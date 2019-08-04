@@ -12,7 +12,6 @@ import Charts
 
 class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     let contentCard = UIView()
     let cardView = CardView()
     let contentView = UILabel()
@@ -30,7 +29,6 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         cardView.subtitleLabel.font = UIFont.systemFont(ofSize: 16)
         cardView.backgroundColor = UIColor.white
         
-        contentView.numberOfLines = 0
         contentCard.backgroundColor = .white
         contentCard.clipsToBounds = true
         
