@@ -7,6 +7,7 @@ target 'heart-app' do
 
   # Pods for heart-app
   pod 'Hero'
+  pod 'Charts'
 
   target 'heart-appTests' do
     inherit! :search_paths
