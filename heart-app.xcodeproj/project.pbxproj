@@ -19,6 +19,8 @@
 		ACE410A822F723EF001ECFB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE410A722F723EF001ECFB1 /* CardView.swift */; };
 		ACE410AB22F72432001ECFB1 /* RoundedCardWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE410AA22F72432001ECFB1 /* RoundedCardWrapperView.swift */; };
 		ACE410AE22F7277F001ECFB1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE410AD22F7277F001ECFB1 /* HistoryViewController.swift */; };
+		ACE410B022F728DD001ECFB1 /* PanDirectionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE410AF22F728DD001ECFB1 /* PanDirectionGestureRecognizer.swift */; };
+		ACE410B222F72920001ECFB1 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE410B122F72920001ECFB1 /* BalloonMarker.swift */; };
 		DAA7C57A2137BE9B17A23C19 /* Pods_heart_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE004E8A5C356FA5A5F664A /* Pods_heart_appTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		ACE410A722F723EF001ECFB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		ACE410AA22F72432001ECFB1 /* RoundedCardWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardWrapperView.swift; sourceTree = "<group>"; };
 		ACE410AD22F7277F001ECFB1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		ACE410AF22F728DD001ECFB1 /* PanDirectionGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanDirectionGestureRecognizer.swift; sourceTree = "<group>"; };
+		ACE410B122F72920001ECFB1 /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		C1B9BBD44FEC93B241BBACF1 /* Pods_heart_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_heart_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21A7E537C1D47AF9329F046 /* Pods-heart-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-heart-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-heart-appTests/Pods-heart-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7847E633B4C7E6581803E9F /* Pods-heart-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-heart-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-heart-appUITests/Pods-heart-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				ACE4106A22F6B076001ECFB1 /* Assets.xcassets */,
 				ACE4106C22F6B076001ECFB1 /* LaunchScreen.storyboard */,
 				ACE4106F22F6B076001ECFB1 /* Info.plist */,
+				ACE410AF22F728DD001ECFB1 /* PanDirectionGestureRecognizer.swift */,
+				ACE410B122F72920001ECFB1 /* BalloonMarker.swift */,
 			);
 			path = "heart-app";
 			sourceTree = "<group>";
@@ -417,10 +423,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE4106622F6B075001ECFB1 /* CardViewController.swift in Sources */,
+				ACE410B022F728DD001ECFB1 /* PanDirectionGestureRecognizer.swift in Sources */,
 				ACE410A822F723EF001ECFB1 /* CardView.swift in Sources */,
 				ACE410AB22F72432001ECFB1 /* RoundedCardWrapperView.swift in Sources */,
 				ACE410AE22F7277F001ECFB1 /* HistoryViewController.swift in Sources */,
 				ACE4106422F6B075001ECFB1 /* AppDelegate.swift in Sources */,
+				ACE410B222F72920001ECFB1 /* BalloonMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

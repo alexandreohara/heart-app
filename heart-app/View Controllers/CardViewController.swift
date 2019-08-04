@@ -22,6 +22,9 @@ class CardViewController: UIViewController {
         icon.image = UIImage(named: "heart")
         mainTitle.text = "Heart Monitor"
         mainTitle.font = UIFont.boldSystemFont(ofSize: 40)
+        historyView.delegate = self
+        profileView.delegate = self
+        medicineView.delegate = self
         animate(image: icon)
         
         
@@ -62,5 +65,26 @@ class CardViewController: UIViewController {
     
 }
 
-
-
+extension CardViewController: RoundedCardWrapperDelegate {
+    func handleTap(heroId: String?) {
+        if (heroId == "history") {
+            let vc = HistoryViewController()
+            vc.hero.isEnabled = true
+            vc.hero.modalAnimationType = .none
+            
+            vc.cardView.hero.id = heroId
+            
+            vc.cardView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
+            //vc.cardView.imageView.image = UIImage(named: "Unsplash\(data)")
+            
+            vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
+            
+            vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 0, damping: 25)]
+            
+            vc.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
+            
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+}
