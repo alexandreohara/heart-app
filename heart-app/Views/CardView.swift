@@ -36,7 +36,7 @@ class CardView: UIView {
         super.layoutSubviews()
         //imageView.frame = bounds
         visualEffectView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 80)
-        titleLabel.frame = CGRect(x: 20, y: 20, width: bounds.width - 40, height: 30)
+        titleLabel.frame = CGRect(x: 20, y: 20, width: bounds.width - 40, height: 40)
         subtitleLabel.frame = CGRect(x: 20, y: 45, width: bounds.width - 40, height: 30)
     }
 }

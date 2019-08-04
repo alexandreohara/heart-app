@@ -30,7 +30,6 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         contentCard.backgroundColor = .white
         contentCard.clipsToBounds = true
-        contentView.backgroundColor = .blue
         contentCard.addSubview(chartView)
         contentCard.addSubview(cardView)
         view.addSubview(contentCard)

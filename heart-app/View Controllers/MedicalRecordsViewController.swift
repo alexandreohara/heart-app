@@ -10,15 +10,37 @@ import UIKit
 import Hero
 
 class MedicalRecordsViewController: UIViewController {
-    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    //let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     let contentCard = UIView()
     let cardView = CardView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .clear
+        //view.addSubview(visualEffectView)
+        
+        cardView.titleLabel.text = "FICHA MÉDICA"
+        cardView.subtitleLabel.text = "Tenha a sua ficha em qualquer lugar"
+        cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_BIG)
+        cardView.subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_BIG)
+        cardView.backgroundColor = UIColor.white
+        
+        contentCard.backgroundColor = .white
+        contentCard.clipsToBounds = true
+        contentCard.addSubview(cardView)
+        view.addSubview(contentCard)
+        
         view.addGestureRecognizer(PanDirectionGestureRecognizer(direction: .horizontal, target: self, action: #selector(handlePan(gr:))))
         view.addGestureRecognizer(PanDirectionGestureRecognizer(direction: .vertical, target: self, action: #selector(handlePan(gr:))))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let bounds = view.bounds
+        //visualEffectView.frame  = bounds
+        contentCard.frame  = bounds
+        cardView.frame = CGRect(x: 0, y: 40, width: bounds.width, height: 80)
     }
     
     @objc func handlePan(gr: PanDirectionGestureRecognizer) {

@@ -84,6 +84,19 @@ extension CardViewController: RoundedCardWrapperDelegate {
             vc.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
             
             present(vc, animated: true, completion: nil)
+        } else if (heroId == "profile") {
+            let vc = MedicalRecordsViewController()
+            vc.hero.isEnabled = true
+            vc.hero.modalAnimationType = .none
+            
+            vc.cardView.hero.id = heroId
+            
+            vc.cardView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
+            //vc.cardView.imageView.image = UIImage(named: "Unsplash\(data)")
+            
+            vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
+           
+            present(vc, animated: true, completion: nil)
         }
     }
     
