@@ -1,16 +1,22 @@
 PODS:
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
   - Hero (1.4.0)
 
 DEPENDENCIES:
+  - Charts
   - Hero
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - Hero
 
 SPEC CHECKSUMS:
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
 
-PODFILE CHECKSUM: 4a4d431142f5bddfdeb1f138bb74b7bafd98e025
+PODFILE CHECKSUM: b9860ee0048d28eef39b1a79c3234c42ce166be6
 
 COCOAPODS: 1.5.3
