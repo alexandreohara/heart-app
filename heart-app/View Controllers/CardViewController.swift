@@ -14,6 +14,7 @@ class CardViewController: UIViewController {
     @IBOutlet weak var historyView: RoundedCardWrapperView!
     @IBOutlet weak var profileView: RoundedCardWrapperView!
     @IBOutlet weak var medicineView: RoundedCardWrapperView!
+    var shouldAnimate: Bool = true
     
     
     override func viewDidLoad() {
@@ -21,13 +22,21 @@ class CardViewController: UIViewController {
         loadCards()
         icon.image = UIImage(named: "heart")
         mainTitle.text = "Heart Monitor"
-        mainTitle.font = UIFont.boldSystemFont(ofSize: 40)
+        mainTitle.font = UIFont.boldSystemFont(ofSize: FontSize.MAIN_TITLE)
         historyView.delegate = self
         profileView.delegate = self
         medicineView.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        shouldAnimate = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        shouldAnimate = true
         animate(image: icon)
-        
-        
     }
     
     func loadCards() {
@@ -57,12 +66,12 @@ class CardViewController: UIViewController {
             UIView.animate(withDuration: 0.75, animations: {
                 image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
             }) { (bool) in
-                self.animate(image: image)
+                self.shouldAnimate ? self.animate(image: image) : nil
             }
         }
         
     }
-    
+
 }
 
 extension CardViewController: RoundedCardWrapperDelegate {
@@ -79,10 +88,22 @@ extension CardViewController: RoundedCardWrapperDelegate {
             
             vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
             
-            vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 0, damping: 25)]
+            //vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 0, damping: 25)]
             
             vc.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
             
+            present(vc, animated: true, completion: nil)
+        } else if (heroId == "profile") {
+            let vc = MedicalRecordsViewController()
+            vc.hero.isEnabled = true
+            vc.hero.modalAnimationType = .none
+            
+            vc.cardView.hero.id = heroId
+            
+            vc.cardView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
+            
+            vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
+           
             present(vc, animated: true, completion: nil)
         }
     }

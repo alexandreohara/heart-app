@@ -26,20 +26,20 @@ class RoundedCardWrapperView: UIView {
     //required init?(coder aDecoder: NSCoder) { fatalError() }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        cardView.layer.cornerRadius = 16
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSize(width: 0, height: 12)
+        cardView.layer.cornerRadius = CardConstants.CORNER_RADIUS
+        layer.shadowColor = CardConstants.SHADOW_COLOR
+        layer.shadowRadius = CardConstants.SHADOW_RADIUS
+        layer.shadowOpacity = CardConstants.SHADOW_OPACITY
+        layer.shadowOffset = CardConstants.SHADOW_OFFSET
         addSubview(cardView)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        cardView.layer.cornerRadius = 16
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 16
-        layer.shadowOpacity = 0.15
-        layer.shadowOffset = CGSize(width: 0, height: 8)
+        cardView.layer.cornerRadius = CardConstants.CORNER_RADIUS
+        layer.shadowColor = CardConstants.SHADOW_COLOR
+        layer.shadowRadius = CardConstants.SHADOW_RADIUS
+        layer.shadowOpacity = CardConstants.SHADOW_OPACITY
+        layer.shadowOffset = CardConstants.SHADOW_OFFSET
         addSubview(cardView)
     }
     override func layoutSubviews() {

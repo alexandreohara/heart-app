@@ -23,8 +23,8 @@ class CardView: UIView {
         super.init(frame: frame)
         clipsToBounds = true
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_DEFAULT)
+        subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_DEFAULT)
         //imageView.contentMode = .scaleAspectFill
         
         //addSubview(imageView)
@@ -36,7 +36,7 @@ class CardView: UIView {
         super.layoutSubviews()
         //imageView.frame = bounds
         visualEffectView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 80)
-        titleLabel.frame = CGRect(x: 20, y: 20, width: bounds.width - 40, height: 30)
+        titleLabel.frame = CGRect(x: 20, y: 20, width: bounds.width - 40, height: 40)
         subtitleLabel.frame = CGRect(x: 20, y: 45, width: bounds.width - 40, height: 30)
     }
 }

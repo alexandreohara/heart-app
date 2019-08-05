@@ -12,10 +12,8 @@ import Charts
 
 class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     let contentCard = UIView()
     let cardView = CardView()
-    let contentView = UILabel()
     let chartView = LineChartView()
     var shouldHideData: Bool = false
     
@@ -26,15 +24,12 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         cardView.titleLabel.text = "Histórico"
         cardView.subtitleLabel.text = "Veja seus últimos registros"
-        cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: 32)
-        cardView.subtitleLabel.font = UIFont.systemFont(ofSize: 16)
+        cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_BIG)
+        cardView.subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_BIG)
         cardView.backgroundColor = UIColor.white
         
-        contentView.numberOfLines = 0
         contentCard.backgroundColor = .white
         contentCard.clipsToBounds = true
-        
-        //contentCard.addSubview(contentView)
         contentCard.addSubview(chartView)
         contentCard.addSubview(cardView)
         view.addSubview(contentCard)
@@ -93,7 +88,6 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         visualEffectView.frame  = bounds
         contentCard.frame  = bounds
         cardView.frame = CGRect(x: 0, y: 40, width: bounds.width, height: 80)
-        contentView.frame = CGRect(x: 20, y: bounds.width + 20, width: bounds.width - 40, height: bounds.height - bounds.width - 20)
         chartView.frame = CGRect(x: 0, y: 80, width: bounds.width - 40, height: 2*bounds.height/3)
     }
     
@@ -131,7 +125,7 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         chartView.rightAxis.enabled = false
         
         let marker = BalloonMarker(color: UIColor(red:0.58, green:0.02, blue:0.02, alpha:1.0),
-                                   font: .systemFont(ofSize: 12),
+                                   font: .systemFont(ofSize: FontSize.SUBTITLE_LABEL_DEFAULT),
                                    textColor: .white,
                                    insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.chartView = chartView
@@ -159,8 +153,8 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         //set1.lineDashLengths = [5, 2.5]
         //set1.highlightLineDashLengths = [5, 2.5]
-        set1.setColor(UIColor.red)
-        set1.setCircleColor(UIColor.red)
+        set1.setColor(Color.PRIMARY_RED)
+        set1.setCircleColor(Color.PRIMARY_RED)
         set1.lineWidth = 1
         set1.circleRadius = 3
         set1.drawCircleHoleEnabled = false
