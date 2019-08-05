@@ -153,8 +153,8 @@ class HistoryViewController: UIViewController, UIGestureRecognizerDelegate {
         
         //set1.lineDashLengths = [5, 2.5]
         //set1.highlightLineDashLengths = [5, 2.5]
-        set1.setColor(UIColor.red)
-        set1.setCircleColor(UIColor.red)
+        set1.setColor(Color.PRIMARY_RED)
+        set1.setCircleColor(Color.PRIMARY_RED)
         set1.lineWidth = 1
         set1.circleRadius = 3
         set1.drawCircleHoleEnabled = false

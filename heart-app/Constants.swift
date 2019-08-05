@@ -23,3 +23,7 @@ struct CardConstants {
     static let SHADOW_OPACITY = Float(0.25)
     static let SHADOW_OFFSET = CGSize(width: 0, height: 12)
 }
+
+struct Color {
+    static let PRIMARY_RED = UIColor(red:0.98, green:0.31, blue:0.31, alpha:1.0)
+}

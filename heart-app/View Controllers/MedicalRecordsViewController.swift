@@ -128,7 +128,7 @@ extension MedicalRecordsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let headerView = view as! UITableViewHeaderFooterView
-        headerView.textLabel?.textColor = UIColor(red:0.98, green:0.31, blue:0.31, alpha:1.0)
+        headerView.textLabel?.textColor = Color.PRIMARY_RED
         headerView.textLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
     }
 }
