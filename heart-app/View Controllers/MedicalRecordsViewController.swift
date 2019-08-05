@@ -15,7 +15,7 @@ class MedicalRecordsViewController: UIViewController {
     let numberOfRowsAtSection = [4, 7]
     let sections = ["Dados Pessoais", "Ficha médica", "Alergias"]
     let textLabel = [["Nome", "Data de Nascimento", "Contato", "Endereço"], ["Altura", "Peso", "Sexo", "Grupo Sanguíneo", "Alergias", "Fumante", "Medicação"]]
-    let detailTextLabel = [["Fulano da Silva", "04/07/1986", "(11)98329-1234", "Av. Professor Luciano Gualberto, 380"], ["1,76", "78kg", "Masculino", "O+", "Intolerante à lactose", "Não", "Amoxilina"]]
+    let detailTextLabel = [["Fulano da Silva", "04/07/1986", "(11)93224-4000", "Av. Professor Luciano Gualberto, 380"], ["1,76", "78kg", "Masculino", "O+", "Intolerante à lactose", "Não", "Amoxilina"]]
     private var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class MedicalRecordsViewController: UIViewController {
         
         view.backgroundColor = .clear
         
-        cardView.titleLabel.text = "FICHA MÉDICA"
+        cardView.titleLabel.text = "Ficha Médica"
         cardView.subtitleLabel.text = "Tenha a sua ficha em qualquer lugar"
         cardView.titleLabel.font = UIFont.boldSystemFont(ofSize: FontSize.TITLE_LABEL_BIG)
         cardView.subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_BIG)

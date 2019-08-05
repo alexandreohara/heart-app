@@ -13,7 +13,7 @@ struct FontSize {
     static let TITLE_LABEL_DEFAULT = CGFloat(28)
     static let SUBTITLE_LABEL_DEFAULT = CGFloat(12)
     static let TITLE_LABEL_BIG = CGFloat(32)
-    static let SUBTITLE_LABEL_BIG = CGFloat(16)
+    static let SUBTITLE_LABEL_BIG = CGFloat(14)
 }
 
 struct CardConstants {
