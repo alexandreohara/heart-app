@@ -14,6 +14,7 @@ class CardViewController: UIViewController {
     @IBOutlet weak var historyView: RoundedCardWrapperView!
     @IBOutlet weak var profileView: RoundedCardWrapperView!
     @IBOutlet weak var medicineView: RoundedCardWrapperView!
+    var shouldAnimate: Bool = true
     
     
     override func viewDidLoad() {
@@ -25,9 +26,17 @@ class CardViewController: UIViewController {
         historyView.delegate = self
         profileView.delegate = self
         medicineView.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        shouldAnimate = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        shouldAnimate = true
         animate(image: icon)
-        
-        
     }
     
     func loadCards() {
@@ -57,12 +66,12 @@ class CardViewController: UIViewController {
             UIView.animate(withDuration: 0.75, animations: {
                 image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
             }) { (bool) in
-                self.animate(image: image)
+                self.shouldAnimate ? self.animate(image: image) : nil
             }
         }
         
     }
-    
+
 }
 
 extension CardViewController: RoundedCardWrapperDelegate {
