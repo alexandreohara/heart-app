@@ -92,7 +92,6 @@ extension CardViewController: RoundedCardWrapperDelegate {
             vc.cardView.hero.id = heroId
             
             vc.cardView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
-            //vc.cardView.imageView.image = UIImage(named: "Unsplash\(data)")
             
             vc.contentCard.hero.modifiers = [.source(heroID: heroId!), .spring(stiffness: 250, damping: 25)]
            
