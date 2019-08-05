@@ -29,16 +29,16 @@ class MedicalRecordsViewController: UIViewController {
         cardView.subtitleLabel.font = UIFont.systemFont(ofSize: FontSize.SUBTITLE_LABEL_BIG)
         cardView.backgroundColor = UIColor.white
         
-        
-        let barHeight = UIApplication.shared.statusBarFrame.size.height
-        let displayWidth = self.view.frame.width
-        let displayHeight = self.view.frame.height
-        tableView = UITableView(frame: CGRect(x: 0, y: barHeight + 80, width: displayWidth, height: displayHeight - barHeight - 80), style: .grouped)
+        tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "MyCell")
-        contentCard.backgroundColor = .white
-        contentCard.clipsToBounds = true
         contentCard.addSubview(cardView)
         contentCard.addSubview(tableView)
+        
+
+        contentCard.backgroundColor = .white
+        contentCard.clipsToBounds = true
+
+        
         view.addSubview(contentCard)
         
         view.addGestureRecognizer(PanDirectionGestureRecognizer(direction: .horizontal, target: self, action: #selector(handlePan(gr:))))
@@ -51,10 +51,9 @@ class MedicalRecordsViewController: UIViewController {
         contentCard.frame  = bounds
         cardView.frame = CGRect(x: 0, y: 40, width: bounds.width, height: 80)
         
-        //let barHeight = UIApplication.shared.statusBarFrame.size.height
-        //let displayWidth = self.view.frame.width
-        //let displayHeight = self.view.frame.height
-        //tableView = UITableView(frame: CGRect(x: 0, y: barHeight + 80, width: displayWidth, height: displayHeight - barHeight - 80))
+        let displayWidth = self.view.frame.width
+        let displayHeight = self.view.frame.height
+        tableView.frame = CGRect(x:0, y:cardView.frame.maxY + 20, width: displayWidth, height: displayHeight)
         tableView.delegate = self
         tableView.dataSource = self
     }
