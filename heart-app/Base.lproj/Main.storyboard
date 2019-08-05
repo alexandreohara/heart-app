@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Card View Controller-->
+        <scene sceneID="Ujk-5o-mTo">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="main" id="wxe-7p-7nt" customClass="CardViewController" customModule="HeroExamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IL9-zX-6fY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Nx-ST-TuT">
+                                <rect key="frame" x="67.5" y="40" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="k1p-5u-ppN"/>
+                                    <constraint firstAttribute="width" secondItem="8Nx-ST-TuT" secondAttribute="height" multiplier="1:1" id="uGg-CO-SZR"/>
+                                    <constraint firstAttribute="height" constant="240" id="xhW-1J-Vyr"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhO-wu-Pj2">
+                                <rect key="frame" x="8" y="288" width="359" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VKt-pN-IEf"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neu-BN-g0m" customClass="RoundedCardWrapperView" customModule="HeroExamples" customModuleProvider="target">
+                                <rect key="frame" x="8" y="368" width="359" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="W1i-Zm-ZId"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="history"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQB-2Q-PEh" userLabel="Profile View" customClass="RoundedCardWrapperView" customModule="HeroExamples" customModuleProvider="target">
+                                <rect key="frame" x="8" y="468" width="359" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="IcH-t8-QDJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="profile"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMF-ts-f7U" userLabel="Medicine View" customClass="RoundedCardWrapperView" customModule="HeroExamples" customModuleProvider="target">
+                                <rect key="frame" x="8" y="568" width="359" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TkM-9T-IRQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="medicine"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="geC-xe-Kps" firstAttribute="trailing" secondItem="neu-BN-g0m" secondAttribute="trailing" constant="8" id="5Ys-Ym-4Nj"/>
+                            <constraint firstItem="geC-xe-Kps" firstAttribute="trailing" secondItem="rQB-2Q-PEh" secondAttribute="trailing" constant="8" id="JRU-rW-kwJ"/>
+                            <constraint firstItem="YMF-ts-f7U" firstAttribute="top" secondItem="rQB-2Q-PEh" secondAttribute="bottom" constant="20" id="RLv-rz-lzK"/>
+                            <constraint firstItem="WhO-wu-Pj2" firstAttribute="top" secondItem="8Nx-ST-TuT" secondAttribute="bottom" constant="8" id="U4D-dj-MKT"/>
+                            <constraint firstItem="rQB-2Q-PEh" firstAttribute="top" secondItem="neu-BN-g0m" secondAttribute="bottom" constant="20" id="UbM-ly-sLi"/>
+                            <constraint firstItem="neu-BN-g0m" firstAttribute="leading" secondItem="geC-xe-Kps" secondAttribute="leading" constant="8" id="WOU-bd-F01"/>
+                            <constraint firstItem="rQB-2Q-PEh" firstAttribute="leading" secondItem="geC-xe-Kps" secondAttribute="leading" constant="8" id="duA-i0-Chh"/>
+                            <constraint firstItem="8Nx-ST-TuT" firstAttribute="top" secondItem="geC-xe-Kps" secondAttribute="top" constant="20" id="eYl-z1-Syw"/>
+                            <constraint firstItem="neu-BN-g0m" firstAttribute="top" secondItem="WhO-wu-Pj2" secondAttribute="bottom" constant="40" id="gLj-CE-n5G"/>
+                            <constraint firstItem="8Nx-ST-TuT" firstAttribute="centerX" secondItem="geC-xe-Kps" secondAttribute="centerX" id="jV1-Gb-JNa"/>
+                            <constraint firstItem="geC-xe-Kps" firstAttribute="trailing" secondItem="WhO-wu-Pj2" secondAttribute="trailing" constant="8" id="krp-oq-peD"/>
+                            <constraint firstItem="geC-xe-Kps" firstAttribute="trailing" secondItem="YMF-ts-f7U" secondAttribute="trailing" constant="8" id="uep-UV-jhV"/>
+                            <constraint firstItem="WhO-wu-Pj2" firstAttribute="leading" secondItem="geC-xe-Kps" secondAttribute="leading" constant="8" id="vKT-hH-Kce"/>
+                            <constraint firstItem="YMF-ts-f7U" firstAttribute="leading" secondItem="geC-xe-Kps" secondAttribute="leading" constant="8" id="vll-iV-gZI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="geC-xe-Kps"/>
                     </view>
+                    <connections>
+                        <outlet property="historyView" destination="neu-BN-g0m" id="gS5-7k-vj1"/>
+                        <outlet property="icon" destination="8Nx-ST-TuT" id="aR0-SW-Irm"/>
+                        <outlet property="mainTitle" destination="WhO-wu-Pj2" id="eQJ-5a-J6z"/>
+                        <outlet property="medicineView" destination="YMF-ts-f7U" id="S6F-8a-cIS"/>
+                        <outlet property="profileView" destination="rQB-2Q-PEh" id="sbf-07-8b7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGy-Zv-MVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4" y="156"/>
         </scene>
     </scenes>
 </document>
